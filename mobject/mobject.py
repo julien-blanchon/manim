@@ -121,7 +121,7 @@ class Mobject(object):
         if about_point is not None:
             self.shift(-about_point)
         for mob in self.family_members_with_points():
-            mob.points = np.multiply(mob.points, scale_factor, casting="unsafe")
+            np.multiply(mob.points, scale_factor, out=mob.points,casting="unsafe")
         if about_point is not None:
             self.shift(about_point)
         return self
