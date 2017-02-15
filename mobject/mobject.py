@@ -113,7 +113,7 @@ class Mobject(object):
     def shift(self, *vectors):
         total_vector = reduce(op.add, vectors)
         for mob in self.family_members_with_points():        
-           mob.points += total_vector
+            np.add(mob.points, total_vector, out=mob.points, casting="unsafe")
         return self        
 
 
@@ -121,7 +121,7 @@ class Mobject(object):
         if about_point is not None:
             self.shift(-about_point)
         for mob in self.family_members_with_points():
-            mob.points *= scale_factor
+            mob.points = np.multiply(mob.points, scale_factor, casting="unsafe")
         if about_point is not None:
             self.shift(about_point)
         return self

@@ -1,7 +1,7 @@
 from helpers import *
 
 from mobject import Mobject
-from mobject.vectorized_mobject import VGroup
+from mobject.vectorized_mobject import VGroup, VMobject
 from mobject.svg_mobject import SVGMobject
 from mobject.tex_mobject import TextMobject
 
@@ -13,7 +13,7 @@ from topics.geometry import Circle, Line
 
 class PatreonLogo(SVGMobject):
     CONFIG = {
-        "file_name" : "patreon_logo",
+        "file_name" : os.path.join(IMAGE_DIR, "patreon_logo.svg"),
         "fill_color" : "#ff5900",
         "fill_opacity" : 1,
         "stroke_width" : 0,
@@ -33,7 +33,7 @@ class PatreonLogo(SVGMobject):
 
 class VideoIcon(SVGMobject):
     CONFIG = {
-        "file_name" : "video_icon",
+        "file_name" : os.path.join(IMAGE_DIR, "video_icon.svg"),
         "width" : 2*SPACE_WIDTH/12.,
         "considered_smooth" : False,
     }
@@ -61,7 +61,7 @@ class VideoSeries(VGroup):
 
 class Headphones(SVGMobject):
     CONFIG = {
-        "file_name" : "headphones",
+        "file_name" : os.path.join(IMAGE_DIR, "headphones.svg"),
         "height" : 2,
         "y_stretch_factor" : 0.5,
         "color" : GREY,
@@ -221,19 +221,19 @@ class Bubble(SVGMobject):
 
 class SpeechBubble(Bubble):
     CONFIG = {
-        "file_name" : "Bubbles_speech.svg",
+        "file_name" : os.path.join(IMAGE_DIR, "Bubbles_speech.svg"),
         "height" : 4
     }
 
 class DoubleSpeechBubble(Bubble):
     CONFIG = {
-        "file_name" : "Bubbles_double_speech.svg",
+        "file_name" : os.path.join(IMAGE_DIR, "Bubbles_double_speech.svg"),
         "height" : 4
     }
 
 class ThoughtBubble(Bubble):
     CONFIG = {
-        "file_name" : "Bubbles_thought.svg",
+        "file_name" : os.path.join(IMAGE_DIR, "Bubbles_thought.svg"),
     }
 
     def __init__(self, **kwargs):
